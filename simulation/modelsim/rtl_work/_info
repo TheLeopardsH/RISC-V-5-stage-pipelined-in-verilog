@@ -1,0 +1,440 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim
+vALU
+Z1 !s110 1578660609
+!i10b 1
+!s100 _QzeYFMPQ1iJ8Fd?>bElz2
+IlHAb1i;Nm3[?PnEeWk7Kk3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1574447024
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1578660609.000000
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2
+Z7 tCvgOpt 0
+n@a@l@u
+vBEext
+R1
+!i10b 1
+!s100 G@?U30hXlmQCT9Jih5onX1
+I^O=_Mb<i^F_<S;4PciOaB2
+R2
+R0
+Z8 w1574843253
+Z9 8C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v
+Z10 FC:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v
+L0 37
+R3
+r1
+!s85 0
+31
+R4
+Z11 !s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v|
+Z12 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v|
+!i113 1
+R5
+R6
+R7
+n@b@eext
+vControl_E
+Z13 !s110 1578660610
+!i10b 1
+!s100 ;]9FoQV=^7R_0el>:AANc2
+Ib?B<iaJEHXT>LCT;<n2T_0
+R2
+R0
+Z14 w1573583484
+Z15 8C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v
+Z16 FC:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v
+L0 30
+R3
+r1
+!s85 0
+31
+Z17 !s108 1578660610.000000
+Z18 !s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v|C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v|
+Z19 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v|
+!i113 1
+R5
+R6
+R7
+n@control_@e
+vControl_ID
+R13
+!i10b 1
+!s100 M@NZK1@H<]=9jgLPlOY>>1
+I8_4dklGlE^i]Ua3:_OUSA0
+R2
+R0
+R14
+R15
+R16
+L0 4
+R3
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R5
+R6
+R7
+n@control_@i@d
+vControl_M
+R13
+!i10b 1
+!s100 gS]m1@U>IC0IhCgLRI8n42
+I<CQ^3`YF2HSZH7QB?Z_Jh0
+R2
+R0
+R14
+R15
+R16
+L0 69
+R3
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R5
+R6
+R7
+n@control_@m
+vControl_W
+R13
+!i10b 1
+!s100 NjcHTkbZR:Qa;9VXCD9Nh1
+IDPWgM`cnFGnSFoi`H:enJ1
+R2
+R0
+R14
+R15
+R16
+L0 90
+R3
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R5
+R6
+R7
+n@control_@w
+vEXT
+R1
+!i10b 1
+!s100 1lUfTbPVe2`9k8VkSQgZK3
+I`AknCei@aUmk<_Ik7W[f71
+R2
+R0
+w1573568436
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v|
+!i113 1
+R5
+R6
+R7
+n@e@x@t
+vHazardUnit
+R13
+!i10b 1
+!s100 LX<k899d6@TkjanfKaooD3
+IAV3hI7VlPG6^CJN3VhiVm0
+R2
+R0
+Z20 w1574825602
+Z21 8C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v
+Z22 FC:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v
+L0 53
+R3
+r1
+!s85 0
+31
+R17
+Z23 !s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v|C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v|
+Z24 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v|
+!i113 1
+R5
+R6
+R7
+n@hazard@unit
+vmux2
+R1
+!i10b 1
+!s100 Nb[GE9[=4n:Vc22oTHibW0
+IQiBzW;MkHaOFKLZ9DbEK13
+R2
+R0
+Z25 w1573382321
+Z26 8C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v
+Z27 FC:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+Z28 !s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v|
+Z29 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v|
+!i113 1
+R5
+R6
+R7
+vmux4
+R1
+!i10b 1
+!s100 @hSYV<flfHki2790fO8CD2
+IgmdRROkB627E^CVSbbHG`0
+R2
+R0
+R25
+R26
+R27
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R28
+R29
+!i113 1
+R5
+R6
+R7
+vPC
+R1
+!i10b 1
+!s100 mi2Q5Ddf<Rm4]c3BnVJD72
+I404c^6m]<Di>N>X2RWezX1
+R2
+R0
+w1574780648
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v|
+!i113 1
+R5
+R6
+R7
+n@p@c
+vram
+R1
+!i10b 1
+!s100 ;R_=N2z?<Cn[am6MXDLhI1
+I[4MZ_2V5jbEhYVWijbcN42
+R2
+R0
+R8
+R9
+R10
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R5
+R6
+R7
+vReg
+R13
+!i10b 1
+!s100 :C6UG]J:k[5=PE1_gIP=C2
+Ia0CaOn<[IgL[`YmAa44J>1
+R2
+R0
+w1574843369
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v|
+!i113 1
+R5
+R6
+R7
+n@reg
+vregfile
+R1
+!i10b 1
+!s100 j:gUM?_12lVnoIJGi:GM]3
+Ik:D@Bk?>8WIT:EdjhU>kT1
+R2
+R0
+w1574839876
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v|
+!i113 1
+R5
+R6
+R7
+vriscv_top
+R13
+!i10b 1
+!s100 4niJi:cX6=E`<6hcBgSXn0
+IFCb;zdPkCWTH[zk3z8:552
+R2
+R0
+w1574843398
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v
+L0 5
+R3
+r1
+!s85 0
+31
+R17
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v|C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v|
+!i113 1
+R5
+R6
+R7
+vrom
+R13
+!i10b 1
+!s100 b9zUm4c2edmW?[gFd_]M=3
+I=CgA;3k;<11I9[B50lchi3
+R2
+R0
+w1578656855
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v
+L0 1
+R3
+r1
+!s85 0
+31
+R17
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2|C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v|
+!i113 1
+R5
+R6
+R7
+vStallUnit
+R13
+!i10b 1
+!s100 kZD@;b[F70Rd>V4Kk:8ml3
+I=A3`GX0Vee85zN>kjSo]22
+R2
+R0
+R20
+R21
+R22
+L0 2
+R3
+r1
+!s85 0
+31
+R17
+R23
+R24
+!i113 1
+R5
+R6
+R7
+n@stall@unit
+vtbriscv
+R13
+!i10b 1
+!s100 3d56<6MfNd46i6I6ckOXB0
+IUQ313Ni[TY<5EAXoi47NS1
+R2
+R0
+w1578660527
+8C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v
+FC:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v
+L0 3
+R3
+r1
+!s85 0
+31
+R17
+!s107 C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim|C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v|
+!i113 1
+R5
+!s92 -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim
+R7
+vWBext
+R1
+!i10b 1
+!s100 >H@aOY6<1TH8O<fnH0<9f1
+I3D=R_`?Q49`4]W>K<b1D@3
+R2
+R0
+R8
+R9
+R10
+L0 57
+R3
+r1
+!s85 0
+31
+R4
+R11
+R12
+!i113 1
+R5
+R6
+R7
+n@w@bext

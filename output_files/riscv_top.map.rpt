@@ -1,0 +1,830 @@
+Analysis & Synthesis report for riscv_top
+Fri Jan 10 17:49:55 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: rom:inmem
+ 10. Parameter Settings for User Entity Instance: Reg:IR_DReg
+ 11. Parameter Settings for User Entity Instance: Reg:PC4_DReg
+ 12. Parameter Settings for User Entity Instance: mux2:MFRSD
+ 13. Parameter Settings for User Entity Instance: mux2:MFRTD
+ 14. Parameter Settings for User Entity Instance: mux2:M1
+ 15. Parameter Settings for User Entity Instance: Reg:IR_EReg
+ 16. Parameter Settings for User Entity Instance: Reg:PC8_EReg
+ 17. Parameter Settings for User Entity Instance: Reg:RS1_EReg
+ 18. Parameter Settings for User Entity Instance: Reg:RS2_EReg
+ 19. Parameter Settings for User Entity Instance: Reg:extReg
+ 20. Parameter Settings for User Entity Instance: mux4:MFRSE
+ 21. Parameter Settings for User Entity Instance: mux4:MFRTE
+ 22. Parameter Settings for User Entity Instance: mux2:aluSrcBMux
+ 23. Parameter Settings for User Entity Instance: Reg:IR_MReg
+ 24. Parameter Settings for User Entity Instance: Reg:PC8_MReg
+ 25. Parameter Settings for User Entity Instance: Reg:RS2_MReg
+ 26. Parameter Settings for User Entity Instance: Reg:ALUOutReg_M
+ 27. Parameter Settings for User Entity Instance: mux2:MFRTM
+ 28. Parameter Settings for User Entity Instance: ram:dmem
+ 29. Parameter Settings for User Entity Instance: Reg:IR_WReg
+ 30. Parameter Settings for User Entity Instance: Reg:PC8_WReg
+ 31. Parameter Settings for User Entity Instance: Reg:ALUOutReg_W
+ 32. Parameter Settings for User Entity Instance: Reg:rDataReg
+ 33. Parameter Settings for User Entity Instance: mux2:wrDataRegMux
+ 34. Port Connectivity Checks: "Control_W:control_W"
+ 35. Port Connectivity Checks: "Reg:rDataReg"
+ 36. Port Connectivity Checks: "Reg:ALUOutReg_W"
+ 37. Port Connectivity Checks: "Reg:PC8_WReg"
+ 38. Port Connectivity Checks: "Reg:IR_WReg"
+ 39. Port Connectivity Checks: "Reg:ALUOutReg_M"
+ 40. Port Connectivity Checks: "Reg:RS2_MReg"
+ 41. Port Connectivity Checks: "Reg:PC8_MReg"
+ 42. Port Connectivity Checks: "Reg:IR_MReg"
+ 43. Port Connectivity Checks: "ALU:alu"
+ 44. Port Connectivity Checks: "Reg:extReg"
+ 45. Port Connectivity Checks: "Reg:RS2_EReg"
+ 46. Port Connectivity Checks: "Reg:RS1_EReg"
+ 47. Port Connectivity Checks: "Reg:PC8_EReg"
+ 48. Port Connectivity Checks: "Reg:IR_EReg"
+ 49. Port Connectivity Checks: "mux2:M1"
+ 50. Port Connectivity Checks: "mux2:MFRTD"
+ 51. Port Connectivity Checks: "mux2:MFRSD"
+ 52. Post-Synthesis Netlist Statistics for Top Partition
+ 53. Elapsed Time Per Partition
+ 54. Analysis & Synthesis Messages
+ 55. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jan 10 17:49:55 2020       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; riscv_top                                   ;
+; Top-level Entity Name              ; riscv_top                                   ;
+; Family                             ; Cyclone IV GX                               ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 2                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total GXB Receiver Channel PCS     ; 0                                           ;
+; Total GXB Receiver Channel PMA     ; 0                                           ;
+; Total GXB Transmitter Channel PCS  ; 0                                           ;
+; Total GXB Transmitter Channel PMA  ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; riscv_top          ; riscv_top          ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; riscv_top.v                      ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v  ;         ;
+; defination.v                     ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v ;         ;
+; Control_E.v                      ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v  ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v        ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v         ;         ;
+; mux4.v                           ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v       ;         ;
+; regfile.v                        ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v    ;         ;
+; rom.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v        ;         ;
+; EXT.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v        ;         ;
+; ram.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v        ;         ;
+; HazardUnit.v                     ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v ;         ;
+; Reg.v                            ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v        ;         ;
+; insmem.txt                       ; yes             ; Auto-Found File        ; C:/intelFPGA_lite/quartusprojects/riscv_top2/insmem.txt   ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 2                ;
+;                          ;                  ;
+; DSP block 9-bit elements ; 0                ;
+;                          ;                  ;
+; Maximum fan-out node     ; clk              ;
+; Maximum fan-out          ; 1                ;
+; Total fan-out            ; 2                ;
+; Average fan-out          ; 0.50             ;
++--------------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+; |riscv_top                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 2    ; 0            ; |riscv_top          ; riscv_top   ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom:inmem ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; N              ; 7     ; Signed Integer                ;
+; M              ; 32    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:IR_DReg ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; width          ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:PC4_DReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:MFRSD ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:MFRTD ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:M1 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; width          ; 32    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:IR_EReg ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; width          ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:PC8_EReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:RS1_EReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:RS2_EReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:extReg ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4:MFRSE ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux4:MFRTE ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:aluSrcBMux ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; width          ; 32    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:IR_MReg ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; width          ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:PC8_MReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:RS2_MReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:ALUOutReg_M ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; width          ; 32    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:MFRTM ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; width          ; 32    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:dmem ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; N1             ; 7     ; Signed Integer               ;
+; N              ; 8     ; Signed Integer               ;
+; M              ; 32    ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:IR_WReg ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; width          ; 32    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:PC8_WReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:ALUOutReg_W ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; width          ; 32    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Reg:rDataReg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; width          ; 32    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2:wrDataRegMux ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; width          ; 32    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control_W:control_W"                                                                 ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; WRSel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:rDataReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "Reg:ALUOutReg_W" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; den  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Reg:PC8_WReg"                                                                       ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; den  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dOut ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "Reg:IR_WReg" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; den  ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "Reg:ALUOutReg_M" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; den  ; Input ; Info     ; Stuck at GND      ;
++------+-------+----------+-------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:RS2_MReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:PC8_MReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "Reg:IR_MReg" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; den  ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:alu"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; over ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "Reg:extReg" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; den  ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:RS2_EReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:RS1_EReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "Reg:PC8_EReg" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; den  ; Input ; Info     ; Stuck at GND   ;
++------+-------+----------+----------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "Reg:IR_EReg" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; den  ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "mux2:M1"    ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; d1   ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "mux2:MFRTD" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; sel  ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "mux2:MFRSD" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; sel  ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; boundary_port     ; 2                               ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri Jan 10 17:49:43 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscv_top -c riscv_top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file riscv_top.v
+    Info (12023): Found entity 1: riscv_top File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 5
+Info (12021): Found 0 design units, including 0 entities, in source file defination.v
+Info (12021): Found 4 design units, including 4 entities, in source file control_e.v
+    Info (12023): Found entity 1: Control_ID File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v Line: 4
+    Info (12023): Found entity 2: Control_E File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v Line: 30
+    Info (12023): Found entity 3: Control_M File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v Line: 69
+    Info (12023): Found entity 4: Control_W File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v Line: 90
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC File: C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v Line: 2
+Info (12021): Found 2 design units, including 2 entities, in source file mux4.v
+    Info (12023): Found entity 1: mux4 File: C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v Line: 1
+    Info (12023): Found entity 2: mux2 File: C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
+    Info (12023): Found entity 1: regfile File: C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom.v
+    Info (12023): Found entity 1: rom File: C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ext.v
+    Info (12023): Found entity 1: EXT File: C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v Line: 3
+Info (12021): Found 3 design units, including 3 entities, in source file ram.v
+    Info (12023): Found entity 1: ram File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v Line: 7
+    Info (12023): Found entity 2: BEext File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v Line: 37
+    Info (12023): Found entity 3: WBext File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v Line: 57
+Info (12021): Found 2 design units, including 2 entities, in source file hazardunit.v
+    Info (12023): Found entity 1: StallUnit File: C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v Line: 2
+    Info (12023): Found entity 2: HazardUnit File: C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v Line: 53
+Info (12021): Found 1 design units, including 1 entities, in source file reg.v
+    Info (12023): Found entity 1: Reg File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v Line: 1
+Info (12127): Elaborating entity "riscv_top" for the top level hierarchy
+Info (12128): Elaborating entity "HazardUnit" for hierarchy "HazardUnit:hazardUnit" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 31
+Info (12128): Elaborating entity "StallUnit" for hierarchy "StallUnit:stallUnit" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 32
+Info (12128): Elaborating entity "PC" for hierarchy "PC:pcReg" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 34
+Info (12128): Elaborating entity "rom" for hierarchy "rom:inmem" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 35
+Warning (10850): Verilog HDL warning at rom.v(7): number of words (74) in memory file does not match the number of elements in the address range [0:74] File: C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v Line: 7
+Warning (10030): Net "imem.data_a" at rom.v(4) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v Line: 4
+Warning (10030): Net "imem.waddr_a" at rom.v(4) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v Line: 4
+Warning (10030): Net "imem.we_a" at rom.v(4) has no driver or initial value, using a default initial value '0' File: C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v Line: 4
+Info (12128): Elaborating entity "Reg" for hierarchy "Reg:IR_DReg" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 38
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:MFRSD" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 41
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:rf" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 43
+Warning (10240): Verilog HDL Always Construct warning at regfile.v(13): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v Line: 13
+Info (12128): Elaborating entity "EXT" for hierarchy "EXT:ext" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 44
+Info (12128): Elaborating entity "Control_ID" for hierarchy "Control_ID:control_ID" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 46
+Info (12128): Elaborating entity "mux4" for hierarchy "mux4:MFRSE" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 55
+Info (12128): Elaborating entity "Control_E" for hierarchy "Control_E:control_E" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 58
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 60
+Warning (10764): Verilog HDL warning at ALU.v(16): converting signed shift amount to unsigned File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 16
+Warning (10270): Verilog HDL Case Statement warning at ALU.v(8): incomplete case statement has no default case item File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(8): inferring latch(es) for variable "ALUOut", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[0]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[1]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[2]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[3]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[4]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[5]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[6]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[7]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[8]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[9]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[10]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[11]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[12]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[13]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[14]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[15]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[16]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[17]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[18]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[19]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[20]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[21]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[22]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[23]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[24]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[25]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[26]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[27]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[28]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[29]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[30]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (10041): Inferred latch for "ALUOut[31]" at ALU.v(8) File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Info (12128): Elaborating entity "Control_M" for hierarchy "Control_M:control_M" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 70
+Info (12128): Elaborating entity "ram" for hierarchy "ram:dmem" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 71
+Warning (10240): Verilog HDL Always Construct warning at ram.v(17): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v Line: 17
+Info (12128): Elaborating entity "BEext" for hierarchy "BEext:beext" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 72
+Info (12128): Elaborating entity "WBext" for hierarchy "WBext:wbext" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 81
+Info (12128): Elaborating entity "Control_W" for hierarchy "Control_W:control_W" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 82
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/quartusprojects/riscv_top2/output_files/riscv_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 6
+    Warning (15610): No output dependent on input pin "rst_n" File: C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v Line: 8
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4831 megabytes
+    Info: Processing ended: Fri Jan 10 17:49:55 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA_lite/quartusprojects/riscv_top2/output_files/riscv_top.map.smsg.
+
+

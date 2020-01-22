@@ -1,0 +1,42 @@
+module regfile(input clk,
+               input         we,
+               input [4:0]   rs,rt,wr,
+               input [31:0]  wd,
+               output reg [31:0] rd1,rd2);
+   reg [31:0]                    rf[31:0];
+
+   always @(posedge clk)
+	begin
+     if(we && wr != 0) rf[wr] = wd;
+	$display("R[00-07]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", rf[0], rf[1], rf[2], rf[3], rf[4], rf[5],
+                  rf[6], rf[7]);
+	$display("R[08-15]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", rf[8], rf[9], rf[10], rf[11], rf[12],
+                  rf[13], rf[14], rf[15]);
+	$display("R[16-23]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", rf[16], rf[17], rf[18], rf[19], rf[20],
+                  rf[21], rf[22], rf[23]);
+	$display("R[24-31]=%8X, %8X, %8X, %8X, %8X, %8X, %8X, %8X", rf[24], rf[25], rf[26], rf[27], rf[28],
+                  rf[29], rf[30], rf[31]);
+	end
+   always @(*)
+        if(we)
+		  begin
+             if(rs == 0)
+               rd1 <= 0;
+             else if(wr == rs)
+               rd1 <= wd;
+             else
+               rd1 <= rf[rs];
+             if(rt == 0)
+               rd2 <= 0;
+             else if(wr == rt)
+               rd2 <= wd;
+             else
+               rd2 <= rf[rt];
+          end // if (we)
+	else
+	  begin
+	     rd1 <= rf[rs];
+	     rd2 <= rf[rt];
+	  end
+endmodule // regfile
+

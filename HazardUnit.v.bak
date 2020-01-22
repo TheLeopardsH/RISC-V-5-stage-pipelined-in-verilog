@@ -1,0 +1,152 @@
+`include "definations.v"
+//****check for rt and rs in other instructions if they are wrong.like in load instruction rs i being used and rt is destination in mips
+//****CHECK FOR RT IN STORE AND LOAD IN ALL BELOW FOR CORRECTION
+module StallUnit(input [31:0] instr_D,instr_E,instr_M,
+                //*** no need for busy and start in risc_vtop
+                 output reg stall);
+//FOR MEMORY STORE WE ALWAYS HAVE RS2 DESTINATION
+always@(*)
+     begin    
+     if(load(instr_E)) //load is in execution phase.In pipeline we have to check if destination of this has to do something with decode instruction variables
+          begin
+//check working here I have to check each instruction for RT,RS and rd in mips in comparizon to risc v rs1.rs2 and rd
+             if(instr_E[`RD] == instr_D[`RS2])//check above its load(rsand rt).we have to check here RT here conceptually
+               stall <= 1'b1;
+             else if(instr_E[`RD] == instr_D[`RS1])
+               stall <= 1'b1;
+             else if(cal_r(instr_D) && instr_E[`RD] == instr_D[`RS2])
+               stall <= 1'b1;
+             else if((cal_r(instr_D) || cal_i(instr_D) || load(instr_D) || store(instr_D))  && instr_E[`RD] == instr_D[`RS1])
+               stall <= 1'b1;
+             else 
+               stall <= 1'b0;
+          end // if (load(instr_E))
+        else if(cal_i(instr_E)) //cal_i_E
+          begin
+             if(instr_E[`RD] == instr_D[`RS2])
+               stall <= 1'b1;
+             else if(instr_E[`RD] == instr_D[`RS1]) 
+               stall <= 1'b1;
+             else 
+               stall <= 1'b0;
+          end
+        else if(cal_r(instr_E) && instr_E[`RD] != 5'b0 ) 
+          begin
+             if(instr_E[`RD] == instr_D[`RS2])
+               stall <= 1'b1;
+             else if(instr_E[`RD] == instr_D[`RS1]) 
+               stall <= 1'b1;
+             else 
+               stall <= 1'b0;
+          end
+        else if(load(instr_M))
+          begin
+             if(instr_M[`RS2] == instr_D[`RS2])
+               stall <= 1'b1;
+             else if(instr_M[`RS2] == instr_D[`RS1]) 
+               stall <= 1'b1;
+             else 
+               stall <= 1'b0;
+          end
+        else 
+          stall <= 1'b0;
+     end // always @ begin
+
+function load;
+   input [31:0] instr ;
+    load =  (`LB || `LBU || `LH || `LHU || `LW);
+endfunction // StallUnit
+
+function cal_r;//include sll srl sra exclude mul div
+   input [31:0] instr;
+    cal_r = (`ADD  || `SUB  || `SLT || `SLTU || `SLL || `SRL || `SRA ||  `AND || `OR || `XOR);
+endfunction // StallUnit
+
+function cal_i;//include lui
+   input [31:0] instr;
+    cal_i = (`ADDI  || `ORI || `XORI || `LUI || `SLTI || `SLTIU||`SLLI||`SRLI||`SRAI||`ANDI);
+endfunction // StallUnit
+
+function store;
+   input [31:0] instr;
+    store = (`SB || `SH || `SW);
+endfunction // StallUnit
+   
+endmodule // StallUnit
+
+
+
+module HazardUnit(input [31:0] instr_D,instr_E,instr_M,instr_W,
+                  output reg [1:0] FowardRS1D,FowardRS2D,FowardRS1E,FowardRS2E,//RSD=DECODING INSTRUCTION NEED OF RS1 SO FORWARD AND ALSO SAMEFOR OTHERS
+                  output reg       FowardRDM);
+   
+
+
+   always @(*) //for Foward RS1E
+//between memory and execute for rs1
+   //if(cal_r(instr_E) || cal_i(instr_E) || load(instr_E) || store(instr_E) || )//cal_i cal_r lw sw E
+      
+     if((cal_r(instr_M) && instr_M[`RS2] != 5'b0) && instr_M[`RS2] == instr_E[`RS1]) //cal_r M
+       FowardRS1E <= 2'b01;
+     else if(cal_i(instr_M) && instr_M[`RS2] == instr_E[`RS1]) //cal_i M
+       FowardRS1E <= 2'b01;
+     
+   
+     else if((cal_r(instr_W) && instr_W[`RD] != 5'b0) && instr_W[`RD] == instr_E[`RS1]) //cal_r W
+       FowardRS1E <= 2'b11;
+     else if(cal_i(instr_W) && instr_W[`RD] == instr_E[`RS1]) //cal_i W
+       FowardRS1E <= 2'b11;
+     else if(load(instr_W) && instr_W[`RD] == instr_E[`RS1]) //load W****IMP FOR LOAD 
+       FowardRS1E <= 2'b11;
+     else
+       FowardRS1E <= 2'b00;
+   
+
+   always @(*) //for Foward RS2E
+//between memory/WRITE TO REGISTER and execute for for RS2
+                                                         //if(cal_r(instr_E) || store(instr_E) || muldiv(instr_E))//cal_i sw E
+     if((cal_r(instr_M) && instr_M[`RS2] != 5'b0) && instr_M[`RS2] == instr_E[`RS2]) //cal_r M
+       FowardRS2E <= 2'b01;
+     else if(cal_i(instr_M) && instr_M[`RS2] == instr_E[`RS2]) //cal_i M
+       FowardRS2E <= 2'b01;
+   
+     else if((cal_r(instr_W) && instr_W[`RD] != 5'b0 ) && instr_W[`RD] == instr_E[`RS2]) //cal_r W
+       FowardRS2E <= 2'b11;
+     else if(cal_i(instr_W) && instr_W[`RD] == instr_E[`RS2]) //cal_i W
+       FowardRS2E <= 2'b11;
+     else if(load(instr_W) && instr_W[`RD] == instr_E[`RS2]) //load W
+       FowardRS2E <= 2'b11;
+     else
+       FowardRS2E <= 2'b00;
+   
+   always @(*) //for Foward RDM
+//BETWEEN MEMORY AND WRITE TO REGISTER
+                                                         //if(store(instr_M)) //sw M
+     if((cal_r(instr_W) && instr_W[`RD] != 5'b0 ) && instr_W[`RD] == instr_M[`RS2]) //cal_r W
+       FowardRDM <= 1'b1;
+     else if((cal_i(instr_W) || load(instr_W)) && instr_W[`RD] == instr_M[`RS2]) //cal_i W
+       FowardRDM <= 1'b1;
+     else
+       FowardRDM <= 1'b0;
+
+function load;
+   input [31:0] instr;
+    load = (`LB || `LBU || `LH || `LHU || `LW);
+endfunction // StallUnit
+
+function cal_r;//include sll srl sra exclude mul div
+   input [31:0] instr;
+  cal_r = (`ADD  || `SUB  || `SLT || `SLTU || `SLL || `SRL || `SRA ||  `AND || `OR || `XOR);
+endfunction // StallUnit
+
+function cal_i;//include lui
+   input [31:0] instr;
+    cal_i = (`ADDI  || `ORI || `XORI || `LUI || `SLTI || `SLTIU||`SLLI||`SRLI||`SRAI||`ANDI);
+endfunction // StallUnit
+
+function store;
+   input [31:0] instr;
+    store = (`SB || `SH || `SW);
+endfunction // StallUnit
+	
+endmodule // HazardUnit

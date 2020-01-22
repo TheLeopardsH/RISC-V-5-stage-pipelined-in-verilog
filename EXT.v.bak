@@ -1,0 +1,9 @@
+module EXT(input [11:0] immIn,
+           input ExtOp,
+           output reg [31:0] immOut);//**need to change in pipeline immediate
+   always @(ExtOp or immIn)
+     if(ExtOp)
+       immOut <= {{20{immIn[11]}},immIn[11:0]};
+     else
+       immOut <= {20'b0,immIn[11:0]};
+endmodule // ext

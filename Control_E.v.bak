@@ -1,0 +1,46 @@
+`include"defination.v"
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//Also b selection is from here also
+module Control_E(input [31:0] instr,
+                 output reg [3:0] ALUOp,
+                 //output reg  ASel, NOT NEEDED CHECK DOWN
+                 output reg [1:0] BSel);//**** need to change 1 bit to 2 bit in pipeline
+
+always @(*)
+ begin
+//handle ALUOp
+     if(`LUI)
+        ALUOp = 4'b00_10;
+      else if(`SUB)
+        ALUOp = 4'b00_01;
+      else if(`AND || `ANDI)
+        ALUOp = 4'b01_00;
+      else if(`OR || `ORI)
+        ALUOp = 4'b01_01;
+      else if(`XOR || `XORI)
+        ALUOp = 4'b01_10;
+      else if(`SLL || `SLLI)
+        ALUOp = 4'b10_00;
+      else if(`SRL || `SRLI)
+        ALUOp = 4'b10_10;
+      else if(`SRA || `SRAI)
+        ALUOp = 4'b10_11;
+      else if(`SLT || `SLTI)
+        ALUOp = 4'b11_00;
+      else if(`SLTU || `SLTIU)
+        ALUOp = 4'b11_01;
+      else //others use add
+        ALUOp = 4'b00_00;
+
+if(`LB || `LBU || `LH || `LHU || `LW ||`ADDI || `ANDI || `ORI || `XORI || `SLTI || `SLTIU || `SLLI || `SRLI || `SRAI) 
+        BSel = 2'b00;
+
+else if ( `LUI )
+        BSel = 2'b01;
+else if (  `SB || `SH || `SW )
+        BSel = 2'b10;
+else    
+        BSel = 2'b11;//for selecting b register
+
+   end
+endmodule // Control_IE

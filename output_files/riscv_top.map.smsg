@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at Control_E.v(97): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v Line: 97
+Warning (10268): Verilog HDL information at ALU.v(8): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v Line: 8
+Warning (10268): Verilog HDL information at ram.v(17): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v Line: 17

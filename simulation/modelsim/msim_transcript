@@ -1,0 +1,420 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do riscv_top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/defination.v 
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/mux4.v 
+# -- Compiling module mux4
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux4
+# 	mux2
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/regfile.v 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/EXT.v 
+# -- Compiling module EXT
+# 
+# Top level modules:
+# 	EXT
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/ram.v 
+# -- Compiling module ram
+# -- Compiling module BEext
+# -- Compiling module WBext
+# 
+# Top level modules:
+# 	ram
+# 	BEext
+# 	WBext
+# End time: 17:50:09 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:09 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/Reg.v 
+# -- Compiling module Reg
+# 
+# Top level modules:
+# 	Reg
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:10 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/riscv_top.v 
+# -- Compiling module riscv_top
+# 
+# Top level modules:
+# 	riscv_top
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:10 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v 
+# -- Compiling module Control_ID
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LW' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(18): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module Control_E
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LBU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LHU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LW' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(58): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module Control_M
+# -- Compiling module Control_W
+# ** Warning: ** while parsing macro expansion: 'LBU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(97)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(97): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(99)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(99): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LHU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(101)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(101): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(103)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(103): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LBU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LHU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LW' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/Control_E.v(114): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	Control_ID
+# 	Control_E
+# 	Control_M
+# 	Control_W
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 17
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:10 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v 
+# -- Compiling module rom
+# 
+# Top level modules:
+# 	rom
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2 {C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:10 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2" C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v 
+# -- Compiling module StallUnit
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LBU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LHU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LW' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(31): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# -- Compiling module HazardUnit
+# ** Warning: ** while parsing macro expansion: 'LB' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LBU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LH' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LHU' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: ** while parsing macro expansion: 'LW' starting at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107)
+# ** at C:/intelFPGA_lite/quartusprojects/riscv_top2/HazardUnit.v(107): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	StallUnit
+# 	HazardUnit
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 10
+# 
+# vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim {C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:50:10 on Jan 10,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim" C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v 
+# -- Compiling module tbriscv
+# 
+# Top level modules:
+# 	tbriscv
+# End time: 17:50:10 on Jan 10,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  tbriscv
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=""+acc"" tbriscv 
+# Start time: 17:50:10 on Jan 10,2020
+# Loading work.tbriscv
+# Loading work.riscv_top
+# Loading work.HazardUnit
+# Loading work.StallUnit
+# Loading work.PC
+# Loading work.rom
+# Loading work.Reg
+# Loading work.mux2
+# Loading work.regfile
+# Loading work.EXT
+# Loading work.Control_ID
+# Loading work.mux4
+# Loading work.Control_E
+# Loading work.ALU
+# Loading work.Control_M
+# Loading work.ram
+# Loading work.BEext
+# Loading work.WBext
+# Loading work.Control_W
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Salman  Hostname: DESKTOP-1VIKFTJ  ProcessID: 29272
+#           Attempting to use alternate WLF file "./wlfttkj3bq".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfttkj3bq
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: (vsim-PLI-3408) Too few data words read on line 75 of file "C:/intelFPGA_lite/quartusprojects/riscv_top2/insmem.txt". Expected 75, found 74.    : C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v(7)
+#    Time: 0 ps  Iteration: 0  Instance: /tbriscv/DUT/inmem
+# dmem[000000xX]=xxxxxxxx
+# dmem[000000xX]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000008]=00000000
+# dmem[00000014]=00000000
+# dmem[000000f4]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000020]=00000000
+# dmem[0000000c]=00000000
+# dmem[000000e0]=xxxxxxxx
+# dmem[0000000c]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000008]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000f4]=xxxxxxxx
+# dmem[000000f4]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000a4]=00000000
+# dmem[000000a4]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000ac]=00000000
+# dmem[000000a0]=00000000
+# dmem[000000a4]=00000000
+# dmem[000000a8]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000f8]=xxxxxxxx
+# dmem[000000a8]=00000000
+# dmem[000000ac]=00000000
+# dmem[000000b0]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000f8]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000014]=00000000
+# dmem[00000028]=00000000
+# dmem[00000014]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000f8]=xxxxxxxx
+# dmem[000000c8]=00000000
+# dmem[000000a8]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000c8]=00000014
+# dmem[000000d0]=00000000
+# dmem[000000d0]=00000014
+# dmem[000000xX]=xxxxxxxx
+# ** Note: $stop    : C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v(45)
+#    Time: 10 us  Iteration: 0  Instance: /tbriscv
+# Break in Module tbriscv at C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v line 45
+add wave -position end  sim:/tbriscv/DUT/instr
+add wave -position end  sim:/tbriscv/DUT/rf/register
+restart
+run -continue
+# ** Warning: (vsim-PLI-3408) Too few data words read on line 75 of file "C:/intelFPGA_lite/quartusprojects/riscv_top2/insmem.txt". Expected 75, found 74.    : C:/intelFPGA_lite/quartusprojects/riscv_top2/rom.v(7)
+#    Time: 0 ps  Iteration: 0  Instance: /tbriscv/DUT/inmem
+# dmem[000000xX]=xxxxxxxx
+# dmem[000000xX]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000008]=00000000
+# dmem[00000014]=00000000
+# dmem[000000f4]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000020]=00000000
+# dmem[0000000c]=00000000
+# dmem[000000e0]=xxxxxxxx
+# dmem[0000000c]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000008]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000f4]=xxxxxxxx
+# dmem[000000f4]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000a4]=00000000
+# dmem[000000a4]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000ac]=00000000
+# dmem[000000a0]=00000000
+# dmem[000000a4]=00000000
+# dmem[000000a8]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000f8]=xxxxxxxx
+# dmem[000000a8]=00000000
+# dmem[000000ac]=00000000
+# dmem[000000b0]=00000000
+# dmem[000000fc]=xxxxxxxx
+# dmem[000000f8]=xxxxxxxx
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000014]=00000000
+# dmem[00000028]=00000000
+# dmem[00000014]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000f8]=xxxxxxxx
+# dmem[000000c8]=00000000
+# dmem[000000a8]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[00000000]=00000000
+# dmem[000000c8]=00000014
+# dmem[000000d0]=00000000
+# dmem[000000d0]=00000014
+# dmem[000000xX]=xxxxxxxx
+# ** Note: $stop    : C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v(45)
+#    Time: 10 us  Iteration: 0  Instance: /tbriscv
+# Break in Module tbriscv at C:/intelFPGA_lite/quartusprojects/riscv_top2/simulation/modelsim/tbriscv.v line 45
+# End time: 19:04:01 on Jan 10,2020, Elapsed time: 1:13:51
+# Errors: 0, Warnings: 4

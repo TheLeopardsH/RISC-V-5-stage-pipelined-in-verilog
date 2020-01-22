@@ -1,0 +1,15 @@
+module riscv_top ( 
+ input clk,   // clock 
+ input rst_n  // active low asynchronous reset 
+); 
+ 
+ // *DO NOT* CHANGE THIS 
+ 
+ reg [31:0] registers [0:31]; // your register file 
+ reg [31:0] imem [0:127];   // 128 word instruction memory 
+ reg [31:0] dmem [0:127];   // 128 word data memory 
+  
+ // your code here 
+ 
+  
+endmodule  

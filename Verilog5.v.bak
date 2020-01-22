@@ -1,0 +1,133 @@
+
+//Note a and b in terms of shift in logical unit try to change them in ALU via contril unit.I corrected them in right way
+//auipcis not added 
+// removement  of nor
+module ALU(input [31:0] a,b,
+           input [3:0] ALUop,
+           output reg[31:0] ALUOut,
+           output reg over);// 0 indicate no overflow
+always @(*)
+      begin 
+           case (ALUop)
+              4'b00_00: ALUOut=a+b;
+              4'b00_01: ALUOut=a-b;
+              4'b00_10: ALUOut={b[31:12],12'b0};//lui
+//missing
+              4'b01_00: ALUOut=a&b;
+              4'b01_01: ALUOut=a|b;
+              4'b01_10: ALUOut=a^b;
+      //AUIPC 4'b01_11: ALUOut=a+{b[31:12],12b'0};//**here PC comes as a and immediate as b AUIPC(NO NOR)check PC selection in control unit
+              4'b10_00: ALUOut=a<<b[4:0];//left shift logical
+//missing
+              4'b10_10: ALUOut=a>>b[4:0];//right shift logical(my rule mistake happened here]
+              4'b10_11: ALUOut=$signed(a)>>>$signed(b[4:0]);//arithmetic right shift
+              4'b11_00: ALUOut=$signed(a) < $signed(b)? 32'b1:32'b0;//set less than
+              4'b11_01: ALUOut=a < b ? 32'b1:32'b0;//set less than unsigned
+//missing
+//missing
+               endcase 
+              over<=0;
+        end
+endmodule 
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//*****check blt and bge if 2' complement required
+//*****also see diiference in cmpOp
+module CMP(input [31:0] a,b,
+           input [2:0] cmpOp,
+           output reg  result);//1 indicate taken
+   reg [31:0]   c;
+   always @(*)
+      case(cmpOp)
+        3'b000://beq
+          begin
+             c = a ^ b;
+             result = ~(|c); //here | verilof reduction operators used like bitwise or(|).It result into one bit	
+          end
+        3'b001://bne
+          begin
+             c = a ^ b;
+             result = |c;
+          end
+        3'b100: result = $signed(a) < $signed(b);//BLT
+        3'b101: result = $signed(a) >= $signed(b);//BGE
+        3'b110: result = a < b;//bltu
+        3'b111: result = a >= b;//bgeu
+      endcase // case (cmpOp)
+endmodule // CMP
+
+//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+module MulDivREM(input [31:0] a,b,
+                 input clk,reset,start,
+                // input we,HiLo,//0->LO,1->HI       ****I think there is no need for them
+                 input [2:0] MulOp,//****Change to 3 bits 
+                 output reg busy,//indicate busy multiplying or dividing or Rem
+                 output reg [31:0] HI,LO);
+reg [3:0] count;
+//reg [31:0] at,bt;
+always @(posedge clk)
+       begin
+               $display("a=%8X,b=%8X",a,b);
+      if(reset)
+             begin
+               HI<=32'b0;
+               LO<=32'b0;
+               count<=0;
+               busy<=0;
+             end
+      //if (we)
+             // if(HiLo)//****meaning of high low here?
+             // HI = a;
+             // else
+             // LO = a;
+      else if(count==1)//**** check control unit for mul,Div,Rem
+    $display("count=%8X",count);
+          begin 
+               if      (MulOp ==3'b000)//MUL  and MULHU****1.taking only lower 23 bits with unsigned
+               {HI,LO}=a*b;
+               else if (MulOp==3'b001)//mulH ****2.taking only upper 32 bits with signed
+               {HI,LO}=$signed(a)*$signed(b);
+               else if (MulOp==3'b010)
+               {HI,LO}=$signed(a)*b;//MULHSU***** here a and b position matters as 'a' has sto be signed
+               //else if (MulOp==3'b011)
+               //HI=at*bt;//****taking only upper 32 biits with signed(what if we combine MUL and MULHU?)
+               else if  (MulOp==3'b011)//DIVU **** there is a confusion if remainder in division has something with REM or nothing to do here
+                   begin
+                    // HI<=at%bt;
+                     LO<=a/b;
+                   end
+               else if (MulOp==3'b100)//DIV
+                    begin
+                      //HI<=$signed(at)%$signed(bt);
+                      LO<=$signed(a)/$signed(b);
+                    end
+               else if (MulOp==3'b101)//REM
+                    begin
+                      LO<=$signed(a)%$signed(b);
+                    end
+               else if (MulOp==3'b110)//REMU
+                    begin
+                      LO<=a%b;
+                    end
+           end//after count==1     
+  
+    if(count)
+          count = count - 4'b1;
+    if(start)
+          begin
+             if(MulOp == 3'b000 || MulOp == 3'b001|| MulOp == 3'b010 || MulOp == 3'b011 || MulOp == 3'b100|| MulOp == 3'b101 || MulOp == 3'b11)
+               count = 5;
+             else
+               count = 10;
+             busy = 1;
+          end
+     if(count)
+         busy <= 1;
+     else
+         busy <= 0;
+
+  end//Always clock posedge
+
+endmodule
+

@@ -1,0 +1,128 @@
+Design Assistant report for riscv_top
+Tue Nov 12 23:18:56 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Design Assistant Summary
+  3. Design Assistant Settings
+  4. Information only Violations
+  5. Design Assistant Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; Design Assistant Summary                                                ;
++-----------------------------------+-------------------------------------+
+; Design Assistant Status           ; Analyzed - Tue Nov 12 23:18:56 2019 ;
+; Revision Name                     ; riscv_top                           ;
+; Top-level Entity Name             ; riscv_top                           ;
+; Family                            ; Cyclone V                           ;
+; Total Critical Violations         ; 0                                   ;
+; Total High Violations             ; 0                                   ;
+; Total Medium Violations           ; 0                                   ;
+; Total Information only Violations ; 2                                   ;
+; - Rule T102                       ; 2                                   ;
++-----------------------------------+-------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Design Assistant Settings                                                                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+; Option                                                                                                                                                               ; Setting        ; To ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+; Design Assistant mode                                                                                                                                                ; Post-Synthesis ;    ;
+; Threshold value for clock net not mapped to clock spines rule                                                                                                        ; 25             ;    ;
+; Minimum number of clock port feed by gated clocks                                                                                                                    ; 30             ;    ;
+; Minimum number of node fan-out                                                                                                                                       ; 30             ;    ;
+; Maximum number of nodes to report                                                                                                                                    ; 50             ;    ;
+; Rule C101: Gated clock should be implemented according to the Intel FPGA standard scheme                                                                             ; On             ;    ;
+; Rule C102: Logic cell should not be used to generate an inverted clock signal                                                                                        ; On             ;    ;
+; Rule C103: Gated clock does not feed at least a pre-defined number of clock ports to effectively save power                                                          ; On             ;    ;
+; Rule C104: Clock signal source should drive only clock input ports                                                                                                   ; On             ;    ;
+; Rule C105: Clock signal should be a global signal                                                                                                                    ; On             ;    ;
+; Rule C106: Clock signal source should not drive registers triggered by different clock edges                                                                         ; On             ;    ;
+; Rule R101: Combinational logic used as a reset signal should be synchronized                                                                                         ; On             ;    ;
+; Rule R102: External reset signals should be synchronized using two cascaded registers                                                                                ; On             ;    ;
+; Rule R103: External reset signal should be correctly synchronized                                                                                                    ; On             ;    ;
+; Rule R104: The reset signal that is generated in one clock domain and used in another clock domain should be correctly synchronized                                  ; On             ;    ;
+; Rule R105: The reset signal that is generated in one clock domain and used in another clock domain should be synchronized                                            ; On             ;    ;
+; Rule T101: Nodes with more than the specified number of fan-outs                                                                                                     ; On             ;    ;
+; Rule T102: Top nodes with the highest number of fan-outs                                                                                                             ; On             ;    ;
+; Rule A101: Design should not contain combinational loops                                                                                                             ; On             ;    ;
+; Rule A102: Register output should not drive its own control signal directly or through combinational logic                                                           ; On             ;    ;
+; Rule A103: Design should not contain delay chains                                                                                                                    ; On             ;    ;
+; Rule A104: Design should not contain ripple clock structures                                                                                                         ; On             ;    ;
+; Rule A105: Pulses should not be implemented asynchronously                                                                                                           ; On             ;    ;
+; Rule A106: Multiple pulses should not be generated in design                                                                                                         ; On             ;    ;
+; Rule A107: Design should not contain SR latches                                                                                                                      ; On             ;    ;
+; Rule A108: Design should not contain latches                                                                                                                         ; On             ;    ;
+; Rule S101: Output enable and input of the same tri-state node should not be driven by same signal source                                                             ; On             ;    ;
+; Rule S102: Synchronous port and asynchronous port of the same register should not be driven by the same signal source                                                ; On             ;    ;
+; Rule S103: More than one asynchronous port of a register should not be driven by the same signal source                                                              ; On             ;    ;
+; Rule S104: Clock port and any other port of a register should not be driven by the same signal source                                                                ; On             ;    ;
+; Rule D101: Data bits are not synchronized when transferred between asynchronous clock domains                                                                        ; On             ;    ;
+; Rule D102: Multiple data bits that are transferred across asynchronous clock domains are synchronized, but not all bits may be aligned in the receiving clock domain ; On             ;    ;
+; Rule D103: Data bits are not correctly synchronized when transferred between asynchronous clock domains                                                              ; On             ;    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+----+
+
+
++----------------------------------------------------------------------------+
+; Information only Violations                                                ;
++----------------------------------------------------------+-------+---------+
+; Rule name                                                ; Name  ; Fan-Out ;
++----------------------------------------------------------+-------+---------+
+; Rule T102: Top nodes with the highest number of fan-outs ; clk   ; 1       ;
+; Rule T102: Top nodes with the highest number of fan-outs ; rst_n ; 1       ;
++----------------------------------------------------------+-------+---------+
+
+
++---------------------------+
+; Design Assistant Messages ;
++---------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Design Assistant
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Nov 12 23:18:52 2019
+Info: Command: quartus_drc riscv_top -c riscv_top
+Info (119006): Selected device 5CGXFC7C7F23C8 for design "riscv_top"
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'riscv_top.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (308044): (Information) Rule T102: Top nodes with the highest number of fan-outs. (Value defined:50). Found 2 node(s) with highest fan-out.
+    Info (308011): Node  "clk" File: C:/intelFPGA_lite/quartusprojects/riscv_top/riscv_top.v Line: 6
+    Info (308011): Node  "rst_n" File: C:/intelFPGA_lite/quartusprojects/riscv_top/riscv_top.v Line: 8
+Info (308006): Design Assistant information: finished post-synthesis analysis of current design -- generated 2 information messages and 0 warning messages
+Info: Quartus Prime Design Assistant was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4995 megabytes
+    Info: Processing ended: Tue Nov 12 23:18:57 2019
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+

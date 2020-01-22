@@ -1,0 +1,31 @@
+
+//Note a and b in terms of shift in logical unit try to change them in ALU via contril unit.I corrected them in right way
+//auipcis not added 
+// removement  of nor
+module ALU(input [31:0] a,b,
+           input [3:0] ALUop,
+           output reg[31:0] ALUOut,
+           output reg over);// 0 indicate no overflow
+always @(*)
+      begin 
+           case (ALUop)
+              4'b00_00: ALUOut=a+b;
+              4'b00_01: ALUOut=a-b;
+              4'b00_10: ALUOut={b[31:12],12'b0};//lui
+//missing
+              4'b01_00: ALUOut=a&b;
+              4'b01_01: ALUOut=a|b;
+              4'b01_10: ALUOut=a^b;
+      //AUIPC 4'b01_11: ALUOut=a+{b[31:12],12b'0};//**here PC comes as a and immediate as b AUIPC(NO NOR)check PC selection in control unit
+              4'b10_00: ALUOut=a<<b[4:0];//left shift logical
+//missing
+              4'b10_10: ALUOut=a>>b[4:0];//right shift logical(my rule mistake happened here]
+              4'b10_11: ALUOut=$signed(a)>>>$signed(b[4:0]);//arithmetic right shift
+              4'b11_00: ALUOut=$signed(a) < $signed(b)? 32'b1:32'b0;//set less than
+              4'b11_01: ALUOut=a < b ? 32'b1:32'b0;//set less than unsigned
+//missing
+//missing
+               endcase 
+              over<=0;
+        end
+endmodule 

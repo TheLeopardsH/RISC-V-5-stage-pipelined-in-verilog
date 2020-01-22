@@ -1,0 +1,20 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/defination.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/ALU.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/PC.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/mux4.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/regfile.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/rom.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/ram.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/Reg.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/riscv_top.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/Control_E.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/EXT.v}
+vlog -vlog01compat -work work +incdir+C:/intelFPGA_lite/quartusprojects/riscv_top {C:/intelFPGA_lite/quartusprojects/riscv_top/HazardUnit.v}
+
